@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
@@ -21,19 +21,19 @@
             <a href="/" class="header__logo"><img src="img/logo.png" alt=""></a>
             <div class="header__masters"><strong id="masters-count">1090</strong> мастеров</div>
         </div>
-        <a class="header__phone" href="tel:+74994551502">+7 (499) 455-15-02</a>
+        <a class="header__phone" href="tel:+74994551502" data-modal="callback">+7 (499) 455-15-02</a>
     </div>
 </header>
 
 <section class="main">
-    <div class="container">
+    <div class="container active">
         <div>
             <h1 class="main__title">Сервис подбора мастера</h1>
             <p class="main__subtitle">по монтажу натяжного потолка</p>
 
             <div class="main__controls">
                 <a href="javascript:void(0)" class="btn">Выбрать мастера</a>
-                <a href="javascript:void(0)" class="btn btn-outline">Узнать стоимость</a>
+                <a href="javascript:void(0)" class="btn btn-outline show-calculator">Узнать стоимость</a>
             </div>
 
             <div class="main__services">
@@ -42,6 +42,680 @@
             </div>
         </div>
         <div><img class="main__bg" src="img/main-bg.svg" alt=""></div>
+    </div>
+
+    <div class="calculator container">
+        <form class="main-work">
+            <div class="calculator__close btn btn-outline">Закрыть</div>
+            <div class="calculator__content">
+                <div class="calculator__header">
+                    <div class="calculator__title">Точный расчет стоимости монтажа</div>
+                    <div class="calculator__user">
+                        <div class="calculator__help">Нужна помощь?</div>
+                        <div class="calculator__avatar">
+                            <img src="img/slide1.png" alt="">
+                            <div class="calculator__status online"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator__body">
+                    <div class="calculator__step active">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Основные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Общая площадь">
+                                        <span class="calculator__designation">м</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Нужно светильников">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Всего труб в потолке">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Периметр помещения">
+                                        <span class="calculator__designation">м</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Количество углов">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Длина карниза">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">
+                                    <span>Составляющие цены потолка</span>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Прежде чем вы получите узнаете натяжных потолков мы покажем основные составляющие его цены</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                           <img src="img/step.jpg" alt="" class="calculator__img">
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">
+                                    <span>Адрес</span>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Адрес объекта позволит нам подобрать ближайшего
+                                    свободного мастера на выбранные вами даты замера и
+                                    монтажа</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Начните вводить">
+                                        <span class="calculator__icon"><img src="img/icons/search.svg" alt=""></span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col"></div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">
+                                    <span>Выберите дату</span>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Выбирая подходящие дни сервис подбирает ближайшего свободного в этот день мастера, о точной дате работ вы
+                                    сможете договориться уже лично с выбранным мастером</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Дата замера">
+                                        <span class="calculator__icon"><img src="img/icons/calendar.svg" alt=""></span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Дата начала работ">
+                                        <span class="calculator__icon"><img src="img/icons/calendar.svg" alt=""></span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col"></div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Основные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор
+                                    мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Периметр помещения">
+                                        <span class="calculator__designation">м</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Количество углов">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Длина карниза">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__col-title">Уровень мастера</div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r1" name="r" class="calculator__input calculator__input-with-text" placeholder="Начинающий">
+                                        <label for="r1">Начинающий</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r2" name="r" class="calculator__input calculator__input-with-text" placeholder="Опытный">
+                                        <label for="r2">Опытный</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r3" name="r" class="calculator__input calculator__input-with-text" placeholder="Профессионал">
+                                        <label for="r3">Профессионал</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Дополнительные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор
+                                    мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div class="width">
+                                        <input type="checkbox" id="c1" name="r" class="calculator__input calculator__input-with-text" placeholder="Начинающий">
+                                        <label for="c1">Двухуровневая конструкция</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div class="width">
+                                        <input type="checkbox" id="c2" name="r" class="calculator__input calculator__input-with-text" placeholder="Опытный">
+                                        <label for="c2">Нужен плинтус</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div class="width">
+                                        <input type="checkbox" id="c3" name="r" class="calculator__input calculator__input-with-text" placeholder="Профессионал">
+                                        <label for="c3">Работа по плитке</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div class="width">
+                                        <input type="checkbox" id="c4" name="r" class="calculator__input calculator__input-with-text" placeholder="Профессионал">
+                                        <label for="c4">Фотопечать</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div class="width">
+                                        <input type="checkbox" id="c5" name="r" class="calculator__input calculator__input-with-text" placeholder="Профессионал">
+                                        <label for="c5">Нужен карниз</label>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col"></div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Основные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Whatsapp">
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <span class="calculator__or">или</span>
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group right">
+                                    <button class="btn">Сохранить расчет</button>
+                                </div>
+                            </div>
+                            <div class="calculator__col"></div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Основные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор
+                                    мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Общая площадь">
+                                        <span class="calculator__designation">м</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Нужно светильников">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Всего труб в потолке">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col"></div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Выберите услугу</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор
+                                    мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r6" name="r" class="calculator__input calculator__input-with-text" placeholder="Опытный">
+                                        <label for="r6">Слив воды</label>
+                                        <span class="calculator__value">от 2000 ₽</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r7" name="r" class="calculator__input calculator__input-with-text" placeholder="Профессионал">
+                                        <label for="r7">Ремонт потолка</label>
+                                        <span class="calculator__value">от 2000 ₽</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r8" name="r" class="calculator__input calculator__input-with-text" placeholder="Профессионал">
+                                        <label for="r8">Демонтаж потолка</label>
+                                        <span class="calculator__value">от 5500 ₽</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="radio" id="r5" name="r" class="calculator__input calculator__input-with-text" placeholder="Начинающий">
+                                        <label for="r5">Замена света</label>
+                                        <span class="calculator__value">от 3000 ₽</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Адрес">
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step bg">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Ознакомиться с предложениями мастеров</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Выбирая подходящие дни сервис подбирает ближайшего свободного в этот день мастера, о точной дате работ вы
+                                    сможете договориться</div>
+                            </div>
+                        </div>
+                        
+                        <div class="master">
+                            <div class="master__avatar" style="background-image: url('img/photo1.png')"></div>
+                            <div class="master__body">
+                                <div class="master__info">
+                                    <div class="master__header">
+                                        <div class="master__skill">
+                                            <div>
+                                                <img src="img/icons/person.svg" alt="">
+                                                <span>Профессионал</span>
+                                            </div>
+                                        </div>
+                                        <div class="master__name">Андрей Филатов</div>
+                                    </div>
+                                    <div class="master__main">
+                                        <div class="master__desc">Здравствуйте! Профессионально занимаюсь натяжными потолками больше 10 лет. Делаю работы любой сложности. Быстро и <a href="javascript:void(0)">Подробнее&nbsp;→</a></div>
+                                        <div class="master__gallery">
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo master__photo-more">+17</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="master__controls">
+                                    <div class="master__distance">
+                                        <img src="img/icons/point.svg" alt="">
+                                        <span>7км от вас</span>
+                                    </div>
+                                    <div class="master__price">
+                                        <img src="img/icons/ruble.svg" alt="">
+                                        <span>13000</span>
+                                    </div>
+                                    <a href="javascript:void(0)" class="btn">Выбрать</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="master">
+                            <div class="master__avatar" style="background-image: url('img/photo2.png')"></div>
+                            <div class="master__body">
+                                <div class="master__info">
+                                    <div class="master__header">
+                                        <div class="master__skill">
+                                            <div>
+                                                <img src="img/icons/person.svg" alt="">
+                                                <span>Профессионал</span>
+                                            </div>
+                                        </div>
+                                        <div class="master__name">Виктор Алексеев</div>
+                                    </div>
+                                    <div class="master__main">
+                                        <div class="master__desc">Здравствуйте! Профессионально занимаюсь натяжными потолками больше 10 лет. Делаю работы любой сложности. Быстро и <a href="javascript:void(0)">Подробнее&nbsp;→</a></div>
+                                        <div class="master__gallery">
+                                            <div class="master__photo" style="background-image: url('img/photo5.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo5.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo5.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo5.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo5.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo5.png');"></div>
+                                            <div class="master__photo master__photo-more">+17</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="master__controls">
+                                    <div class="master__distance">
+                                        <img src="img/icons/point.svg" alt="">
+                                        <span>10км от вас</span>
+                                    </div>
+                                    <div class="master__price">
+                                        <img src="img/icons/ruble.svg" alt="">
+                                        <span>13000</span>
+                                    </div>
+                                    <a href="javascript:void(0)" class="btn">Выбрать</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="master">
+                            <div class="master__avatar" style="background-image: url('img/photo3.png')"></div>
+                            <div class="master__body">
+                                <div class="master__info">
+                                    <div class="master__header">
+                                        <div class="master__skill">
+                                            <div>
+                                                <img src="img/icons/person.svg" alt="">
+                                                <span>Профессионал</span>
+                                            </div>
+                                        </div>
+                                        <div class="master__name">Андрей Филатов</div>
+                                    </div>
+                                    <div class="master__main">
+                                        <div class="master__desc">Здравствуйте! Профессионально занимаюсь натяжными потолками больше 10 лет. Делаю работы любой сложности. Быстро и <a href="javascript:void(0)">Подробнее&nbsp;→</a></div>
+                                        <div class="master__gallery">
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo" style="background-image: url('img/photo4.png');"></div>
+                                            <div class="master__photo master__photo-more">+17</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="master__controls">
+                                    <div class="master__distance">
+                                        <img src="img/icons/point.svg" alt="">
+                                        <span>10км от вас</span>
+                                    </div>
+                                    <div class="master__price">
+                                        <img src="img/icons/ruble.svg" alt="">
+                                        <span>13000</span>
+                                    </div>
+                                    <a href="javascript:void(0)" class="btn">Выбрать</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="javascript:void(0)" class="master__next btn btn-white">Показать еще</a>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Основные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Общая площадь">
+                                        <span class="calculator__designation">м</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Нужно светильников">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="text" class="calculator__input calculator__input-with-text" placeholder="Всего труб в потолке">
+                                        <span class="calculator__designation">шт</span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__cost">
+                                    <span>Предварительная стоимость:</span>
+                                    <div>от <strong>11200 ₽ </strong> до <strong>14700 ₽ </strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator__row right">
+                            <a href="javascript:void(0)" class="btn btn-outline s">Сохранить расчет</a>
+                            <a href="javascript:void(0)" class="btn s">Сохранить расчет и подобрать мастера</a>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Основные работы</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Дополнительные работы помогут сделать подбор мастера более правильным</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Whatsapp">
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <span class="calculator__or">или</span>
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group">
+                                    <div>
+                                        <input type="file" id="file" class="calculator__input calculator__input-with-text">
+                                        <label for="file">Прикрепить фото или видео</label>
+                                        <span class="calculator__icon"><img src="img/icons/file.svg" alt=""></span>
+                                    </div>
+                                    <div class="calculator__question">?</div>
+                                </div>
+                                <div class="calculator__group right">
+                                    <button class="btn">Получить консультацию</button>
+                                </div>
+                            </div>
+                            <div class="calculator__col"></div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__step-title">Подтвердите заказ</div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__step-subtitle">Укажите свои контактные данные для связи с Вами</div>
+                            </div>
+                        </div>
+                        <div class="calculator__row">
+                            <div class="calculator__col">
+                                <div class="calculator__specialist">
+                                    <span>Ваш специалист:</span>
+                                    <a href="javascript:void(0)" class="btn btn-outline">Выбрать другого</a>
+                                </div>
+                                <div class="master mini">
+                                    <div class="master__body">
+                                        <div class="master__photo" style="background-image: url('img/photo1.png');"></div>
+                                        <div class="master__info">
+                                            <div class="master__name">Виктор Алексеев</div>
+                                        </div>
+                                    </div>
+                                    <div class="master__controls">
+                                        <div class="master__distance">
+                                            <img src="img/icons/point.svg" alt="">
+                                            <span>7км</span>
+                                        </div>
+                                        <div class="master__price">
+                                            <img src="img/icons/ruble.svg" alt="">
+                                            <span>13000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calculator__col">
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Имя">
+                                </div>
+                                <div class="calculator__group">
+                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                </div>
+                                <div class="calculator__group right">
+                                    <button class="btn">Отправить заявку</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator__step">
+                        <div class="calculator__done">
+                            <img src="img/icons/done.png" alt="">
+                            <p><strong>Спасибо за заявку!</strong> <br> Наш менеджер свяжется с вами в течение 10 минут, <br> оставайтесь на связи</p>
+                            <a href="javascript:void(0)" class="btn close">Закрыть</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator__footer">
+                <div class="calculator__progress">
+                    <div class="calculator__work">Готово: <span><span class="calculator__percent">0</span>%</span></div>
+                    <div class="calculator__progressbar"><div class="calculator__line" style="width: 0%"></div></div>
+                </div>
+                <div class="calculator__controls">
+                    <div class="calculator__prev disable"></div>
+                    <div class="calculator__next">Дальше</div>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -229,9 +903,45 @@
     </div>
 </footer>
 
+<div class="backdrop">
+    <div class="modal" data-modal="thanks">
+        <div class="modal__close"></div>
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="29.9999" cy="30.1127" r="28.8241" stroke="#00CE52"/>
+                    <rect class="l1" x="17.1621" y="30.1475" width="1.11981" height="13.9354" rx="0.559903" transform="rotate(-45 17.1621 30.1475)" fill="#00CE52"/>
+                    <rect class="l2" x="44.5547" y="21.1216" width="1.11981" height="25.7034" rx="0.559903" transform="rotate(45 44.5547 21.1216)" fill="#00CE52"/>
+                </svg>
+                
+                <p><strong>Спасибо за заявку!</strong> <br> Наш менеджер свяжется с вами в течение 10 минут, <br> оставайтесь на связи</p>
+                <a href="javascript:void(0)" class="btn close">Закрыть</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="callback">
+        <div class="modal__close"></div>
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__header">
+                <div class="modal__title">Обратный звонок</div>
+            </div>
+            <div class="modal__body">
+               <form action="">
+                   <input type="text" name="phone">
+                   <button type="submit" data-modal="thanks" class="btn">Жду звонок</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- END CONTENT  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/libs/jquery.mask.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
