@@ -9,10 +9,6 @@ var swiper = new Swiper('.masters-slider ', {
 
 let updateMastersPosition = () => $('.masters').css('padding-left', $('.question__wrap').offset().left);
 
-updateMastersPosition();
-
-$(window).resize(updateMastersPosition);
-
 // show modal
 $('body').on('click', '[data-modal]:not(.modal)', (e) => {
     if (!$('.backdrop').hasClass('active')) $('.backdrop').addClass('active');
@@ -44,7 +40,8 @@ $(document).keyup((e) => {
     if (e.keyCode === 27 && $('.backdrop').hasClass('active')) closeModal();
 });
 
-$('input[name="phone"]').mask('+7 (000) 000-00-00', {placeholder: '+7 (___) ___-__-__'});
+$('input[name="phonemask"]').mask('+7 (000) 000-00-00', {placeholder: '+7 (___) ___-__-__'});
+$('input[name="phone"]').mask('+7 (000) 000-00-00');
 
 $('body').on('submit', 'form', (e) => {
     e.preventDefault();
@@ -55,6 +52,7 @@ $('body').on('click', '.show-calculator', (e) => {
     $('.main .container').removeClass('active');
     $('.calculator').addClass('active').find('.main-work').css('opacity', 0).hide().slideDown(400);
     $('.main-work').animate({ 'opacity': 1 });
+    $('.calculator__step:first-child').addClass('visible');
 });
 
 // close calculator
@@ -65,8 +63,6 @@ $('body').on('click', '.calculator__close, .calculator .close', (e) => {
 
 
 let stepsCount = $('.calculator__step').length;
-
-console.log()
 
 for (let i = 0; i <= stepsCount; i++) {
     $(`.calculator__step:nth-child(${i})`).attr('data-step', i);
@@ -84,9 +80,12 @@ $('body').on('click', '.calculator__next', (e) => {
     let activeStep = parseInt($('.calculator__step.active').attr('data-step'));
 
     if (activeStep < stepsCount) {
-        $('.calculator__step').removeClass('active');
-        $(`.calculator__step[data-step="${activeStep + 1}"]`).addClass('active');
-        updateProgressbar();
+        $('.calculator__step').removeClass('visible');
+        setTimeout(() => {
+            $('.calculator__step').removeClass('active');
+            $(`.calculator__step[data-step="${activeStep + 1}"]`).addClass('active').addClass('visible');
+            updateProgressbar();
+        }, 200);
     }
 
     if (activeStep + 1 === stepsCount) $('.calculator__next').addClass('disable');
@@ -94,6 +93,8 @@ $('body').on('click', '.calculator__next', (e) => {
     if (activeStep > 0) $('.calculator__prev').removeClass('disable');
 
     $(`.calculator__step[data-step="${activeStep + 1}"]`).hasClass('bg')? $('.calculator__content').addClass('bg') : $('.calculator__content').removeClass('bg');
+
+    if ($(window).width() <= 767) $("html, body").stop().animate({scrollTop:0});
 });
 
 // go to prev step
@@ -101,9 +102,12 @@ $('body').on('click', '.calculator__prev', (e) => {
     let activeStep = parseInt($('.calculator__step.active').attr('data-step'));
 
     if (activeStep > 1) {
-        $('.calculator__step').removeClass('active');
-        $(`.calculator__step[data-step="${activeStep - 1}"]`).addClass('active');
-        updateProgressbar();
+        $('.calculator__step').removeClass('visible');
+        setTimeout(() => {
+            $('.calculator__step').removeClass('active');
+            $(`.calculator__step[data-step="${activeStep - 1}"]`).addClass('active').addClass('visible');
+            updateProgressbar();
+        }, 200);
     }
 
     if ($('.calculator__next').is('.disable')) $('.calculator__next').removeClass('disable');
@@ -111,4 +115,6 @@ $('body').on('click', '.calculator__prev', (e) => {
     if (activeStep === 2) $('.calculator__prev').addClass('disable');
 
     $(`.calculator__step[data-step="${activeStep - 1}"]`).hasClass('bg')? $('.calculator__content').addClass('bg') : $('.calculator__content').removeClass('bg');
+
+    if ($(window).width() <= 767) $("html, body").stop().animate({scrollTop:0});
 });

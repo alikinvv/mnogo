@@ -310,7 +310,7 @@
                                 </div>
                                 <span class="calculator__or">или</span>
                                 <div class="calculator__group">
-                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <input type="text" name="phone" class="calculator__input calculator__input-with-text" placeholder="Телефон">
                                     <div class="calculator__question">?</div>
                                 </div>
                                 <div class="calculator__group right">
@@ -406,7 +406,7 @@
                             </div>
                             <div class="calculator__col">
                                 <div class="calculator__group">
-                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <input type="text" name="phone" class="calculator__input calculator__input-with-text" placeholder="Телефон">
                                     <div class="calculator__question">?</div>
                                 </div>
                                 <div class="calculator__group">
@@ -587,7 +587,7 @@
                             <div class="calculator__col">
                                 <div class="calculator__cost">
                                     <span>Предварительная стоимость:</span>
-                                    <div>от <strong>11200 ₽ </strong> до <strong>14700 ₽ </strong></div>
+                                    <div>от <strong>11200 <img src="img/icons/ruble-line.svg" alt=""> </strong> до <strong>14700 <img src="img/icons/ruble-line.svg" alt=""> </strong></div>
                                 </div>
                             </div>
                         </div>
@@ -614,7 +614,7 @@
                                 </div>
                                 <span class="calculator__or">или</span>
                                 <div class="calculator__group">
-                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <input type="text" name="phone" class="calculator__input calculator__input-with-text" placeholder="Телефон">
                                     <div class="calculator__question">?</div>
                                 </div>
                                 <div class="calculator__group">
@@ -672,7 +672,7 @@
                                     <input type="text" class="calculator__input calculator__input-with-text" placeholder="Имя">
                                 </div>
                                 <div class="calculator__group">
-                                    <input type="text" class="calculator__input calculator__input-with-text" placeholder="Телефон">
+                                    <input type="text" name="phone" class="calculator__input calculator__input-with-text" placeholder="Телефон">
                                 </div>
                                 <div class="calculator__group right">
                                     <button class="btn">Отправить заявку</button>
@@ -753,112 +753,114 @@
 </section>
 
 <section class="masters">
-    <h2 class="left">Лучшие мастера</h2>
+    <div class="container">
+        <h2 class="left">Лучшие мастера</h2>
 
-    <div class="masters-slider swiper-container">
-        <div class="swiper-wrapper">
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide1.png');"></div>
-                <p class="masters__name">Алина Вавилова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(72)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide2.png');"></div>
-                <p class="masters__name">Марина Куликова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(18)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide3.png');"></div>
-                <p class="masters__name">Андрей Давиденко</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(25)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide4.png');"></div>
-                <p class="masters__name">Яна Крылова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(35)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide5.png');"></div>
-                <p class="masters__name">Ася Пантелеймонова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(50)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide6.png');"></div>
-                <p class="masters__name">Алина Вавилова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(72)</div>
-                </div>
-            </a>
+        <div class="masters-slider swiper-container">
+            <div class="swiper-wrapper">
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide1.png');"></div>
+                    <p class="masters__name">Алина Вавилова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(72)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide2.png');"></div>
+                    <p class="masters__name">Марина Куликова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(18)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide3.png');"></div>
+                    <p class="masters__name">Андрей Давиденко</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(25)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide4.png');"></div>
+                    <p class="masters__name">Яна Крылова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(35)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide5.png');"></div>
+                    <p class="masters__name">Ася Пантелеймонова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(50)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide6.png');"></div>
+                    <p class="masters__name">Алина Вавилова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(72)</div>
+                    </div>
+                </a>
 
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide1.png');"></div>
-                <p class="masters__name">Алина Вавилова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(72)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide2.png');"></div>
-                <p class="masters__name">Марина Куликова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(18)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide3.png');"></div>
-                <p class="masters__name">Андрей Давиденко</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(25)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide4.png');"></div>
-                <p class="masters__name">Яна Крылова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(35)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide5.png');"></div>
-                <p class="masters__name">Ася Пантелеймонова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(50)</div>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="swiper-slide">
-                <div class="masters__photo" style="background-image: url('img/slide6.png');"></div>
-                <p class="masters__name">Алина Вавилова</p>
-                <div class="masters__rating">
-                    <div class="stars"></div>
-                    <div class="rating-count">(72)</div>
-                </div>
-            </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide1.png');"></div>
+                    <p class="masters__name">Алина Вавилова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(72)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide2.png');"></div>
+                    <p class="masters__name">Марина Куликова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(18)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide3.png');"></div>
+                    <p class="masters__name">Андрей Давиденко</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(25)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide4.png');"></div>
+                    <p class="masters__name">Яна Крылова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(35)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide5.png');"></div>
+                    <p class="masters__name">Ася Пантелеймонова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(50)</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide">
+                    <div class="masters__photo" style="background-image: url('img/slide6.png');"></div>
+                    <p class="masters__name">Алина Вавилова</p>
+                    <div class="masters__rating">
+                        <div class="stars"></div>
+                        <div class="rating-count">(72)</div>
+                    </div>
+                </a>
 
+            </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
 </section>
 
 <section class="question">
@@ -883,8 +885,8 @@
             </div>
         </div>
         <div class="footer__social">
-            <a href="javascript:void(0)"><img src="img/icons/inst.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="img/icons/facebook.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="img/icons/i.svg" alt=""></a>
+            <a href="javascript:void(0)"><img src="img/icons/f.svg" alt=""></a>
         </div>
     </div>
 </footer>
@@ -916,7 +918,7 @@
             </div>
             <div class="modal__body">
                <form action="">
-                   <input type="text" name="phone">
+                   <input type="text" name="phonemask">
                    <button type="submit" data-modal="thanks" class="btn">Жду звонок</button>
                </form>
             </div>

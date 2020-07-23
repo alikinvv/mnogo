@@ -556,7 +556,6 @@ body {
 
 	&__icon {
 		@include r(767) {
-			margin: 0 auto;
 			margin-bottom: 10px;
 		}
 
@@ -569,6 +568,8 @@ body {
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 32px;
+		margin-left: auto;
+		margin-right: auto;
 		user-select: none;
 		pointer-events: none;
 	}
@@ -583,28 +584,31 @@ body {
 }
 
 .masters {
-	padding-left: 19.5%;
 	padding-right: 20px;
 	position: relative;
 	overflow: hidden;
 	margin-top: 35px;
 
-	&::after {
-		@include r(767) {
-			right: 2px;
-			width: 31%;
-		}
+	.container {
+		position: relative;
 
-		content: '';
-		position: absolute;
-		right: -23px;
-		top: 0;
-		bottom: 0;
-		width: 17%;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #FFFFFF 81.4%);
-		z-index: 10;
-		user-select: none;
-		pointer-events: none;
+		&::after {
+			@include r(767) {
+				right: 2px;
+				width: 31%;
+			}
+	
+			content: '';
+			position: absolute;
+			right: -23px;
+			top: 0;
+			bottom: 0;
+			width: 17%;
+			background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #FFFFFF 81.4%);
+			z-index: 10;
+			user-select: none;
+			pointer-events: none;
+		}
 	}
 	
 	h2 {
@@ -662,12 +666,13 @@ body {
 .swiper-button-next, .swiper-button-prev {
 	@include r(767) {
 		right: 22px;
+		top: 57px;
 	}
 
 	background: url('../img/icons/arrow.svg') no-repeat center;
 	width: 65px;
 	height: 20px;
-	top: 80px;
+	top: 67px;
 	left: initial;
 	right: 76px;
 	z-index: 11;
@@ -690,9 +695,10 @@ body {
 .swiper-button-prev {
 	@include r(767) {
 		right: 106px;
+		top: 59px;
 	}
 	
-	top: 81px;
+	top: 69px;
 	right: 176px;
 	transform: rotate(180deg);
 }
@@ -1108,7 +1114,7 @@ body {
 
 			background: #fff;
 			border-radius: 15px;
-			height: 488px;
+			height: 510px;
 			position: relative;
 
 			&.bg {
@@ -1496,9 +1502,17 @@ body {
 				strong {
 					@include r(1023) {
 						font-size: 18px;
+
+						img {
+							width: 11px !important;
+						}
 					}
 
 					font-size: 24px;
+
+					img {
+						width: 14px;
+					}
 				}
 			}
 		}
@@ -1529,10 +1543,15 @@ body {
 
 			padding: 0 71px;
 			display: none;
+			opacity: 0;
 			transition: $trans;
 
 			&.active {
 				display: block;
+			}
+
+			&.visible {
+				opacity: 1;
 			}
 
 			&-title {
